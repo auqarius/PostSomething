@@ -142,7 +142,8 @@
     CGFloat y = inputRect.origin.y;
     // 计算输入框是不是超出了
     if (y > standerdY) {
-        [self.tableView setContentOffset:CGPointMake(0, y - standerdY - 64) animated:NO];
+        inputRect.origin.y += 44;
+        [self.tableView scrollRectToVisible:inputRect animated:NO];
     } else {
         [self.tableView setContentOffset:CGPointMake(0, -64) animated:NO];
     }
